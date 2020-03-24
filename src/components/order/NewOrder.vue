@@ -1,5 +1,10 @@
 <template>
-  <div>{{value}}</div>
+  <div>
+    <div>{{value}}</div>
+    <van-button type="default" @click="loadData()">默认按钮</van-button>
+  </div>
+
+
 </template>
 
 <script>
@@ -20,7 +25,7 @@
             };
         },
         mounted() {
-            this.loadData();
+            // this.loadData();
         },
         methods: {
             // pageScroll() {
@@ -37,9 +42,11 @@
 
                 getStatus(this.params).then(res => {
                     this.value = res.data;
-                    window.console.log(res.data)
+
                 }).catch(err => {
-                  console(err.toString());
+                    this.$dialog(err.message);
+
+
                 })
             }
         }

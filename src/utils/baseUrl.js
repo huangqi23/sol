@@ -11,7 +11,8 @@ switch (process.env.NODE_ENV) {
         baseUrl = 'https://pre-server.feleti.cn' // 预上线环境url
         break
     case 'production':
-        baseUrl = 'https://api.feleti.cn' // 生产环境url
+        // baseUrl = 'https://api.feleti.cn' // 生产环境url
+        baseUrl = '/api' // 生产环境url
         break
 }
 

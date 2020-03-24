@@ -18,7 +18,6 @@ export function switchLabel(params) {
     return post("/goods/switchLabel", params);
 }
 
-// 更换货物已占用位置
 export function getStatus(params) {
-    return post("/sol/status", params);
+    return post("/status/getStatus", params);
 }

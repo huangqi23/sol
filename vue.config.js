@@ -49,7 +49,7 @@ module.exports = {
         open: true, //配置自动启动浏览器
         proxy: {
             '/api': {
-                target: 'http://localhost:8434',
+                target: 'http://localhost:8434/api',
                 changeOrigin: true,
                 ws: true,
                 pathRewrite: {

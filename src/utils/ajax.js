@@ -47,7 +47,7 @@ axios.interceptors.response.use(response => {
     let data = response.data;
     let isJson = (response.headers["content-type"] || "").includes("json");
     if (isJson) {
-        if (data.code === 200) {
+        if (data.code === "200") {
             return Promise.resolve({
                 data: data.data,
                 msg: data.msg,
