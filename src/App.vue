@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <!--<router-link to="/">Home</router-link> |-->
-      <!--<router-link to="/about">About</router-link>-->
 
-    </div>
     <router-view/>
 
     <div id="tabbar" class="page page-index">
@@ -19,7 +15,7 @@
 
         <van-tabbar-item
           name="product"
-          to="/newOrder"
+          to="/product"
           :icon="active=='product'?'add':'add-o'"
         >
           发起接龙
@@ -27,7 +23,7 @@
 
         <van-tabbar-item
           name="cart"
-          to="/cart"
+          to="/near"
           :icon="active=='cart'?'friends':'friends-o'"
         >
           附近接龙
@@ -35,7 +31,7 @@
 
         <van-tabbar-item
           name="member"
-          to="/member"
+          to="/user"
           :icon="active=='member'?'manager':'user-o'"
         >
           我的
@@ -59,7 +55,7 @@
         },
         watch: {
             active() {
-                console.log(this.active)
+                // console.log(this.active)
             },
             '$route'(to) {
                 this.setActive(to)
@@ -67,6 +63,44 @@
         },
         mounted() {
             this.setActive(this.$route)
+        },
+        created(){
+
+            //
+            //
+            // const queryString = require('query-string')
+            // let href = window.location.href;
+            // if (href.includes("?code")){
+            //     let parsedUrl = queryString.parse(href.split('?')[1])
+            //     this.$router.push({path:'/about',query:{code:parsedUrl.code}})
+            //     // next({
+            //     //     path:'/WxAuth',
+            //     //     // query:{
+            //     //     //     redirect: to.fullPath
+            //     //     // }
+            //     // })
+            // }else{
+            //     let wxUserInfo = localStorage.getItem('wxUserInfo')
+            //     if (!wxUserInfo) {
+            //         //保存当前路由地址，授权后还会跳到此地址
+            //         // sessionStorage.setItem('wxRedirectUrl', to.fullPath)
+            //         //请求微信授权,并跳转到 /WxAuth 路由
+            //         let appId = 'wxfb5e3f583cf66988'
+            //
+            //         let url = window.location.href;
+            //         let redirectUrl = encodeURIComponent(url)
+            //         //判断是否为正式环境
+            //         if (window.location.origin.indexOf('https://m.xxxxxx.com') !== -1) {
+            //             appId = '正式服的AppId'
+            //             redirectUrl = encodeURIComponent('https://m.xxxxxx.com/WxAuth')
+            //         }
+            //         window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${redirectUrl}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect`
+            //     }
+            // }
+
+            // else {
+            //     next()
+            // }
         },
         methods: {
             setActive(route) {
@@ -110,5 +144,14 @@
     position: relative;
     overflow: auto;
   }
+}
+.margin-top{
+  margin-top:15px !important;
+}
+.cblock {
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
 }
 </style>

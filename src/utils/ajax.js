@@ -52,6 +52,7 @@ axios.interceptors.response.use(response => {
                 data: data.data,
                 msg: data.msg,
                 code: data.code,
+                success: true,
             });
         }
         return Promise.reject(
