@@ -135,7 +135,7 @@
     <!--<img src="https://www.jsdaima.com/Upload/201702/1488260043/studio_0006.jpg" class="all studio"/>-->
     <!--</div>-->
     <!--<div class="albums-tab-text">.sim-anim-9 <span>(9 pictures)</span></div>-->
-    <!--</div>-->
+    <!--</div>-->[
 
     <!--</div>-->
 

@@ -13,3 +13,22 @@ export function getStatus(params) {
 export function wecahtLogin(params) {
     return post("/status/wecahtLogin", params);
 }
+
+
+
+/////////////////商品管理begin/////////////////
+
+//添加接龙
+export function saveDragon(params) {
+    return post("/goods/saveDragon", params);
+}
+
+//获取接龙列表
+export function getDragonList(params) {
+    return post("/goods/getDragonList", params);
+}
+
+
+
+
+/////////////////商品管理end/////////////////

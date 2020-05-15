@@ -19,6 +19,7 @@ export default {
                     sessionStorage.setItem("nickname", res.data.userInfo.nickname);
                     sessionStorage.setItem("openid", res.data.userInfo.openid)
                     sessionStorage.setItem("headimgUrl", res.data.userInfo.headimgUrl)
+                    sessionStorage.setItem("userId", res.data.userInfo.id)
                     console.log(sessionStorage)
                     // user = res.data.userInfo;
                 } else {

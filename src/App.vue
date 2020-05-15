@@ -2,7 +2,7 @@
   <div id="app">
 
     <router-view/>
-
+    <div style="height: 50px;"></div>
     <div id="tabbar" class="page page-index">
       <van-tabbar v-model="active" active-color="#bb0000" route>
         <van-tabbar-item
