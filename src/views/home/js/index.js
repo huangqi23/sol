@@ -6,8 +6,10 @@ export default {
     name: "index",
     components: {SwipeModel, SearchModel,ProductListModel},
     created(){
+
         //本地开发注释
         sessionStorage.code =   this.getUrlKey("code");
+        sessionStorage.setItem("userId",1)
         if (!sessionStorage.code || sessionStorage.code === "" || sessionStorage.code === "null") {
             return;
         }

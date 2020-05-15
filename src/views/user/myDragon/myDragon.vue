@@ -10,13 +10,22 @@
           finished-text="没有更多了"
           @load="onLoad"
         >
-          <van-cell v-for="item in list" :key="item" :title="item.dragonName" />
+          <van-cell v-for="item in list" :key="item.id" :title="item.dragonName" />
         </van-list>
       </van-pull-refresh>
     </van-tab>
 
     <van-tab  title="已发布">
-
+      <van-pull-refresh v-model="refreshing1" @refresh="onRefresh1">
+        <van-list
+          v-model="loading1"
+          :finished="finished1"
+          finished-text="没有更多了"
+          @load="onLoad1"
+        >
+          <van-cell v-for="item in list1" :key="item.id" :title="item.dragonName" />
+        </van-list>
+      </van-pull-refresh>
     </van-tab>
 
   </van-tabs>

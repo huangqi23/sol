@@ -17,6 +17,39 @@
         <van-field v-model="value" label="规格"  />
         <van-field v-model="value" label="价格"  />
         <van-field v-model="value" label="库存"  />
+
+      </van-cell-group>
+    </div>
+
+
+    <div class="productTitle">
+      <span>其他设置</span>
+    </div>
+
+    <div class="productPro">
+      <van-cell-group>
+        <!--<van-field label="接龙时间"  >-->
+          <!--<span>this.utils.formatDate(beginTime)</span>-->
+          <!--{{beginTime}}-->
+        <!--&lt;!&ndash;{{this.utils.formatDate(beginTime)}}&ndash;&gt;-->
+        <!--</van-field>-->
+
+        <van-field
+          v-model="this.utils.formatDate(beginTime)"
+          label="开始时间"  readonly="readonly"
+          @click="showBeginTime = true"
+        />
+        <van-field
+          v-model="this.utils.formatDate(endTime)"
+          label="截单时间"  readonly="readonly"
+          @click="showEndTime = true"
+        />
+        <van-field
+          v-model="this.utils.formatDate(deliveryTime)"
+          label="提货时间"  readonly="readonly"
+          @click="showDeliveryTime = true"
+        />
+
         <van-field v-model="value" label="是否限制购买"  />
         <van-field v-model="value" label="设置阶梯价格"  />
         <van-field v-model="value" label="物流设置"  />
@@ -50,6 +83,36 @@
     </div>
 
 
+    <van-popup v-model="showBeginTime" position="bottom">
+      <van-datetime-picker
+        v-model="beginTime"
+        type="datetime"
+        :min-date="minDate"
+        :max-date="maxDate"
+        :formatter="formatter"
+      />
+    </van-popup>
+
+    <van-popup v-model="showEndTime" position="bottom">
+      <van-datetime-picker
+        v-model="endTime"
+        type="datetime"
+        :min-date="minDate"
+        :max-date="maxDate"
+        :formatter="formatter"
+      />
+    </van-popup>
+
+    <van-popup v-model="showDeliveryTime" position="bottom">
+      <van-datetime-picker
+        v-model="deliveryTime"
+        type="datetime"
+        :min-date="minDate"
+        :max-date="maxDate"
+        :formatter="formatter"
+      />
+    </van-popup>
+
   </div>
 
 
@@ -59,7 +122,12 @@
 
 
 <style scoped>
-
+  div{
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+  }
   .productTitle{
     text-align: left;
     color: #fff;

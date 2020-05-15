@@ -8,7 +8,17 @@ export default {
             id:null,
             dragonName:"",
             userId:null,
-            description:""
+            description:"",
+            //接龙开始时间
+            showBeginTime: false,
+            showEndTime: false,
+            showDeliveryTime:false,
+            minDate: new Date(2020, 0, 1),
+            maxDate: new Date(2025, 10, 1),
+
+            beginTime: new Date(),
+            endTime: new Date(),
+            deliveryTime: new Date(),
         };
     },
     methods: {
@@ -17,24 +27,38 @@ export default {
                 userId: sessionStorage.userId,
                 id: this.id,
                 dragonName: this.dragonName,
-                description: this.description
+                description: this.description,
+                beginTime: this.beginTime,
+                endTime: this.endTime,
+                isPublish: 0
             }).then(res => {
                 if (res.success) {
-                    this.$toast.success( "操作成功");
+                    // this.$toast.success( "操作成功");
+                    this.$router.push('/myDragon')
                 } else {
                     return false
                 }
             })
         },
         publish() {
-            let routeName=route.name;
-            if(routeName && routeName.indexOf('index-')===0){
-                let tab = routeName.replace('index-','');
-                if(this.active != tab){
-                    this.active = tab
+            saveDragon({
+                userId: sessionStorage.userId,
+                id: this.id,
+                dragonName: this.dragonName,
+                description: this.description,
+                beginTime: this.beginTime,
+                endTime: this.endTime,
+                isPublish: 1
+            }).then(res => {
+                if (res.success) {
+                    // this.$toast.success( "操作成功");
+                    this.$router.push('/myDragon')
+                } else {
+                    return false
                 }
-            }
-        }
+            })
+        },
+
     }
 
 }

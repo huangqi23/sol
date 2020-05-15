@@ -66,41 +66,6 @@
         },
         created(){
 
-            //
-            //
-            // const queryString = require('query-string')
-            // let href = window.location.href;
-            // if (href.includes("?code")){
-            //     let parsedUrl = queryString.parse(href.split('?')[1])
-            //     this.$router.push({path:'/about',query:{code:parsedUrl.code}})
-            //     // next({
-            //     //     path:'/WxAuth',
-            //     //     // query:{
-            //     //     //     redirect: to.fullPath
-            //     //     // }
-            //     // })
-            // }else{
-            //     let wxUserInfo = localStorage.getItem('wxUserInfo')
-            //     if (!wxUserInfo) {
-            //         //保存当前路由地址，授权后还会跳到此地址
-            //         // sessionStorage.setItem('wxRedirectUrl', to.fullPath)
-            //         //请求微信授权,并跳转到 /WxAuth 路由
-            //         let appId = 'wxfb5e3f583cf66988'
-            //
-            //         let url = window.location.href;
-            //         let redirectUrl = encodeURIComponent(url)
-            //         //判断是否为正式环境
-            //         if (window.location.origin.indexOf('https://m.xxxxxx.com') !== -1) {
-            //             appId = '正式服的AppId'
-            //             redirectUrl = encodeURIComponent('https://m.xxxxxx.com/WxAuth')
-            //         }
-            //         window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${redirectUrl}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect`
-            //     }
-            // }
-
-            // else {
-            //     next()
-            // }
         },
         methods: {
             setActive(route) {
