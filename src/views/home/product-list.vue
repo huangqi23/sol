@@ -2,7 +2,8 @@
   <div  ref="listRoot" >
     <van-tabs v-model="active" sticky animated>
       <van-tab  title="推荐">
-        <van-grid class="product-list" column-num="2" :gutter="gutter" :border="false">
+
+        <van-grid class="product-list" column-num="2"  :border="false" >
           <van-grid-item v-for="product in lists" :key="product.id" :to="'/product/detail/'+product.id">
             <div class="product-item" :style="{width:itemSize+'px'}">
               <img fit="scale-down" :width="itemSize" :height="itemSize" :src="product.image" />
@@ -19,7 +20,7 @@
       </van-tab>
 
       <van-tab  title="关注">
-        <van-grid class="product-list" column-num="2" :gutter="gutter" :border="false">
+        <van-grid class="product-list" column-num="2"  :border="false">
           <van-grid-item v-for="product in lists1" :key="product.id" :to="'/product/detail/'+product.id">
             <div class="product-item" :style="{width:itemSize+'px'}">
               <img fit="scale-down" :width="itemSize" :height="itemSize" :src="product.image" />
@@ -53,4 +54,5 @@
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
   }
+
 </style>

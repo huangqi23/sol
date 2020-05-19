@@ -4,7 +4,7 @@ import home from './home'
 import user from './user'
 import product from './product'
 import near from './near'
-
+import Dashboard from '../views/dashboard/Dashboard.vue'
 
 Vue.use(VueRouter)
 
@@ -17,11 +17,38 @@ const router = new VueRouter({
   base: '/data/web/sol/',
     // base:process.env.BASE_URL,
   routes:[
-      ...home,
-      ...user,
-      ...product,
-      ...near
+      {
+          path: '/',
+          redirect: '/dashboard',
+          // 是否数据缓存
+          meta: {
+              keepAlive: true
+          },
+      },
+       {
+          // 根页面
+          path: '/dashboard',
+          name: 'dashboard',
+          component: Dashboard,
+          children: [
+              {
+                  path: '/dashboard',
+                  redirect: '/dashboard/home',
+                  // 是否数据缓存
+                  meta: {
+                      keepAlive: true
+                  },
+              },
+              ...home,
+              ...user,
+              ...product,
+              ...near
+          ]
+      }
   ]
+
+
+
 })
 
 

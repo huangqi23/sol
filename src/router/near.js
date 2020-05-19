@@ -1,7 +1,7 @@
 import product from '../views/near/index'
 export default [
     {
-        path: '/near',
+        path: 'near',
         name: 'near',
         meta: {
             keepAlive: true

@@ -8,12 +8,24 @@
       </van-cell-group>
     </div>
 
+
     <div class="productTitle">
-      <span>添加商品</span>
+      <van-row>
+        <van-col span="16">
+          <span>添加商品</span>
+        </van-col>
+        <van-col span="8" style="font-size: smaller">
+
+          <router-link to="/myDragon">去商品库添加</router-link>
+        </van-col>
+      </van-row>
     </div>
+
+
     <div class="productPro">
       <van-cell-group>
         <van-field v-model="value" label="商品名称" />
+
         <van-field v-model="value" label="规格"  />
         <van-field v-model="value" label="价格"  />
         <van-field v-model="value" label="库存"  />
@@ -23,16 +35,16 @@
 
 
     <div class="productTitle">
-      <span>其他设置</span>
+      <van-row>
+        <van-col span="16">
+          <span>其他设置</span>
+        </van-col>
+
+      </van-row>
     </div>
 
     <div class="productPro">
       <van-cell-group>
-        <!--<van-field label="接龙时间"  >-->
-          <!--<span>this.utils.formatDate(beginTime)</span>-->
-          <!--{{beginTime}}-->
-        <!--&lt;!&ndash;{{this.utils.formatDate(beginTime)}}&ndash;&gt;-->
-        <!--</van-field>-->
 
         <van-field
           v-model="this.utils.formatDate(beginTime)"
@@ -50,10 +62,10 @@
           @click="showDeliveryTime = true"
         />
 
-        <van-field v-model="value" label="是否限制购买"  />
-        <van-field v-model="value" label="设置阶梯价格"  />
-        <van-field v-model="value" label="物流设置"  />
-        <van-field v-model="value" label="备注"  />
+        <van-field v-model="dragonTimes" label="限制接龙次数"  placeholder="输入0为不限次数"  />
+        <!--<van-field v-model="value" label="设置阶梯价格"  />-->
+        <!--<van-field v-model="value" label="物流设置"  />-->
+        <van-field v-model="tips" label="重要提示"  />
         <van-field v-model="value" label="备注"  />
       </van-cell-group>
     </div>
@@ -129,6 +141,7 @@
     border-bottom-right-radius:10px;
   }
   .productTitle{
+    padding-top: 2rem;
     text-align: left;
     color: #fff;
     font-size: 20px;

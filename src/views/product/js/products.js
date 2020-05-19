@@ -9,6 +9,9 @@ export default {
             dragonName:"",
             userId:null,
             description:"",
+            tips:"",
+            dragonTimes:null,
+
             //接龙开始时间
             showBeginTime: false,
             showEndTime: false,
@@ -30,7 +33,8 @@ export default {
                 description: this.description,
                 beginTime: this.beginTime,
                 endTime: this.endTime,
-                isPublish: 0
+                isPublish: 0,
+                dragonTimes:this.dragonTimes
             }).then(res => {
                 if (res.success) {
                     // this.$toast.success( "操作成功");
@@ -48,7 +52,8 @@ export default {
                 description: this.description,
                 beginTime: this.beginTime,
                 endTime: this.endTime,
-                isPublish: 1
+                isPublish: 1,
+                tips:this.tips
             }).then(res => {
                 if (res.success) {
                     // this.$toast.success( "操作成功");

@@ -1,7 +1,7 @@
 <template>
 <div>
   <van-sticky>
-    <div :class="navbgClass">
+    <div class="navbgClass">
       <van-search
         slot="title"
         placeholder="输入商品名称搜索"

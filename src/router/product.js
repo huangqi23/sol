@@ -1,7 +1,7 @@
 import product from '../views/product/index'
 export default [
     {
-        path: '/product',
+        path: 'product',
         name: 'product',
         meta: {
             keepAlive: true
