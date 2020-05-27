@@ -3,14 +3,14 @@
     <!-- 搜索栏 -->
     <Search></Search>
     <!-- 附近接龙 -->
-    <!--<TodayMenu></TodayMenu>-->
+    <TodayMenu></TodayMenu>
   </div>
 </template>
 
 <script type="text/javascript">
 
     import Search from './components/Search'
-    // import TodayMenu from './components/TodayMenu'
+    import TodayMenu from './components/TodayMenu'
 
     export default {
         data () {
@@ -20,7 +20,7 @@
         },
         components: {
             Search,
-            // TodayMenu
+            TodayMenu
         }
     }
 </script>

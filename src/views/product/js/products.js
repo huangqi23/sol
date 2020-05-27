@@ -38,7 +38,7 @@ export default {
             }).then(res => {
                 if (res.success) {
                     // this.$toast.success( "操作成功");
-                    this.$router.push('/myDragon')
+                    this.$router.push('/dashboard/myDragon')
                 } else {
                     return false
                 }
@@ -57,7 +57,7 @@ export default {
             }).then(res => {
                 if (res.success) {
                     // this.$toast.success( "操作成功");
-                    this.$router.push('/myDragon')
+                    this.$router.push('/dashboard/myDragon')
                 } else {
                     return false
                 }
