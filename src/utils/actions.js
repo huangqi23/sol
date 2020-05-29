@@ -28,7 +28,10 @@ export function getDragonList(params) {
     return post("/goods/getDragonList", params);
 }
 
-
+//获取附近接龙列表
+export function getNearDragonList(params) {
+    return post("/goods/getNearDragonList", params);
+}
 
 
 /////////////////商品管理end/////////////////

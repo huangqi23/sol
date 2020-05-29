@@ -75,6 +75,20 @@ axios.interceptors.response.use(response => {
 })
 
 export function post(url, data, otherConfig) {
+    if(data!==undefined && Object.prototype.hasOwnProperty.call(data, "page")){
+        if(otherConfig == undefined){
+            otherConfig = {};
+            otherConfig['params'] = {};
+
+        }
+        otherConfig['params']['page'] = data.page;
+
+        if(Object.prototype.hasOwnProperty.call(data, "size")){
+            otherConfig['params']['size'] = data.size;
+        }
+        //otherConfig['size'] = data.limit;
+    }
+
     return axios.post(url, data, otherConfig);
 }
 

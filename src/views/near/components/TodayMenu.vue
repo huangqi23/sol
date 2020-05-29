@@ -28,12 +28,12 @@
         </div>
       </div>
 
-      <!--<MenuCategoryLists-->
-        <!--:todayMenuCategoryLists="todayMenuCategoryLists"-->
-        <!--:isShowMenuList="isShowMenuList"-->
-        <!--v-on:hiddenMenu="clickAll"-->
-      <!--&gt;-->
-      <!--</MenuCategoryLists>-->
+      <MenuCategoryLists
+        :todayMenuCategoryLists="todayMenuCategoryLists"
+        :isShowMenuList="isShowMenuList"
+        v-on:hiddenMenu="clickAll"
+      >
+      </MenuCategoryLists>
     </div>
     <!-- <Loading :show="isShowLoading"> </Loading> -->
     <!-- 骨架屏 -->
@@ -43,7 +43,7 @@
 
 <script type="text/javascript">
     import BScroll from 'better-scroll'
-    // import MenuCategoryLists from './MenuCategoryLists'
+    import MenuCategoryLists from './MenuCategoryLists'
 
     // 引入通知
     import PubSub from 'pubsub-js'
@@ -76,7 +76,7 @@
             })
         },
         components: {
-            // MenuCategoryLists,
+            MenuCategoryLists,
             // Loading,
             // Skeleton
         },

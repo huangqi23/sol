@@ -27,6 +27,13 @@ Vue.use(Search ).use(Swipe).use(SwipeItem).use(Divider ).use(Tab).use(Tabs).use(
 Vue.config.productionTip = false
 Vue.prototype.utils=Utils;
 
+
+// 瀑布流
+import waterfall from 'vue-waterfall2'
+Vue.use(waterfall)
+
+
+
 new Vue({
     router,
     store,
